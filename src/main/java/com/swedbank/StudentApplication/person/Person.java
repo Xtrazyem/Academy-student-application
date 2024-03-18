@@ -58,7 +58,7 @@ public class Person implements Serializable {
      */
     private String phone;
 
-    @ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST }, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     @JoinTable(name = "person_group", joinColumns = @JoinColumn(name = "pid", referencedColumnName = "pid"),
             inverseJoinColumns = @JoinColumn(name = "group_id", referencedColumnName = "id"))
     @ToString.Exclude
